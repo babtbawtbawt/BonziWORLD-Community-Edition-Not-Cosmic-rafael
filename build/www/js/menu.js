@@ -32,6 +32,15 @@ $.contextMenu({
                             }
                         }
                     }
+                }, espeak: {
+                    name: function() {
+                        return (typeof espeaktts !== "undefined" && espeaktts) ? "Voice: eSpeak ✓" : "Enable eSpeak Voice";
+                    },
+                    callback() {
+                        if (typeof espeaktts !== "undefined") {
+                            espeaktts = !espeaktts;
+                        }
+                    }
                 }, color: {
                     name: "Set Color",
                     callback() {
